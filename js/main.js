@@ -10,6 +10,7 @@ let alarmSoundEffect = new Audio('../assets/audio/smart-alarm-audio-effect.mp3')
 let second = 60;
 let hasTimerStarted = false;
 let valueInMinutes;
+let resultCode;
 
 start.addEventListener('click', (event) => {
     if (!hasTimerStarted) {
@@ -22,7 +23,7 @@ start.addEventListener('click', (event) => {
         if (isNaN(valueInMinutes) || (valueInMinutes <= 0 && second <= 0)) {
             console.log('Minute and seconds are required field and must be value grater than 0.');
         } else {
-            let resultCode = setInterval(() => {
+            resultCode = setInterval(() => {
 
                 --second;
 
