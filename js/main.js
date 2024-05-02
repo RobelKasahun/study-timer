@@ -21,15 +21,16 @@ start.addEventListener('click', (event) => {
          * Otherwise start the timer with the given minutes
          */
         if (isNaN(valueInMinutes) || (valueInMinutes <= 0 && second <= 0)) {
-            console.log('Minute and seconds are required field and must be value grater than 0.');
+            alert('Minute and seconds are required field and must be value grater than 0.');
         } else {
             resultCode = setInterval(() => {
 
                 --second;
 
-                if (second < 0) {
+                if (second === 0) {
                     if (valueInMinutes > 0) {
                         --valueInMinutes;
+                        second = 59;
                     } else {
                         // let the alarm goes off when the time is up
                         alarmSoundEffect.play();
@@ -37,7 +38,6 @@ start.addEventListener('click', (event) => {
                         // time is up
                         stopTimer();
                     }
-                    second = 59;
                 }
 
                 // add leading zeros if minutes and seconds are zero
