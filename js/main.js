@@ -1,12 +1,8 @@
 let time = document.querySelector('#time');
-let setTimer = document.querySelector('#set')
 let studySession = document.querySelector('#study-session');
-let breakSession = document.querySelector('#break-session');
 let start = document.querySelector('#start');
 let stop = document.querySelector('#stop');
-let studyError = document.querySelector('#study-error');
-// let breakError = document.querySelector('#break-error');
-let alarmSoundEffect = new Audio('../assets/audio/../assets/audio/smart-alarm-audio-effect.mp3');
+let alarmSoundEffect = new Audio('./assets/audio/smart-alarm-audio-effect.mp3');
 let second = 60;
 let hasTimerStarted = false;
 let valueInMinutes;
